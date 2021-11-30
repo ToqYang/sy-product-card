@@ -16,12 +16,12 @@ export const useProduct = ({ onChange, product, value = 0, initialValues }: useP
     const isMounted = useRef(false);
 
     const increaseBy = ( value: number ) => {
-      
+
         let newValue = Math.max( counter + value, 0 )
         if ( initialValues?.maxCount ) {
             newValue = Math.min( newValue, initialValues.maxCount )
         }
-        
+
         setCounter( newValue );
         onChange && onChange({ count: newValue, product });
     }
